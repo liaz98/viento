@@ -1,0 +1,44 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="pt-100">
+      <div class="cases cases_main portfolio-brand-wr services-page mb-30 pt-100" id="cases">
+          <div class="cases__center center">
+            <div class="cases__stage stage" data-aos="animation-scale-y">Xizmatlar</div>
+            <h2 class="cases__title h1" data-aos="animation-scale-y" data-aos-delay="150">Best solution for the dreams</h2>
+
+
+            <div class="cases__list js-owl services-carousel-wr" data-items-mobile-portrait="1" data-items-mobile-album="1" data-autoheight>
+              {% for item in service %}
+              <a class="cases__item illustration" data-aos="animation-translate-y" data-aos-delay="" href="{{item.get_absolute_url}}">
+                <div class="cases__body">
+                  <div class="details__preview details__preview_color">
+                    <div class="details__img">
+                      <img class="details__pic" src="{{item.service_image.url}}" alt="">
+                    </div>
+                  </div>
+                  <h5 class="cases__info h4">{{item.name|safe}}</h5>
+                  <div class="cases__text">{{item.service_description|truncatechars:180}}</div>
+                  <button class="details__btn btn btn_dark">Ko'proq ma'lumot </button>
+                </div>
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class="cases__figures">
+            <div class="cases__figure">
+              <img class="cases__pic js-parallax" data-scale="2" data-orientation="down" src="{% static 'img/figure-2.png' %}" alt="">
+            </div>
+            <div class="cases__figure">
+              <img class="cases__pic js-parallax" data-scale="1.8" data-orientation="down" src="{% static 'img/figure-3.png' %}" alt="">
+            </div>
+          </div>
+
+      </div>
+</div>
+
+{% endblock content %}

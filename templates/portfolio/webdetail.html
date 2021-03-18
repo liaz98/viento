@@ -1,0 +1,125 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+.parallax-slider{
+    transition: all 0.7s ease-out 0s;
+}
+</style>
+
+
+
+<div class="product">
+<div class="web-single-wr">
+  <div class="web-single">
+	<div class="img-left  wow bounceInUp" data-wow-delay=".2s" data-wow-duration="1.25s"><img src="{{ web.web_image_mobile.url }}" alt=""></div>
+	<div class="img-right wow bounceInUp"  data-wow-delay=".4s" data-wow-duration="1.25s"><img src="{{web.web_image_pc.url}}" alt=""></div>
+  </div>
+</div>
+</div>
+
+<div class="product web-single-title-wr bg-white mb-130">
+<div class="product__head">
+  <div class="product__center center">
+	<div class="product__wrap">
+	  <div class="product__stage stage" data-aos="animation-scale-y">Websaytlar yaratish</div>
+	  <h1 class="product__title title h1" data-aos="animation-scale-y" data-aos-delay="150">{{web.web_title}}</h1>
+
+	</div>
+	<div class="product__box product__box_show project-info" data-aos="animation-translate-y">
+
+	  <ul class="product__list">
+		<li>MIJOZ<br>
+		  <small>{{web.client}}</small>
+		</li>
+		<li>XIZMAT TURI<br>
+		  <small>{{ web.service }}</small>
+		</li>
+		<li>VAQTI<br>
+		  <small>{{web.year|date:'Y'}}</small>
+		</li>
+	  </ul>
+	</div>
+  </div>
+
+<div class="product__center center pt-128">
+	<div class="product__box product__box_hide project-info" data-aos="animation-scale-y">
+	  <ul class="product__list">
+		<li>CLIENT<br>
+		  <small>Hayot</small>
+		</li>
+		<li>SERVICES<br>
+		  <small>Internet magazin</small>
+		</li>
+		<li>DATE<br>
+		  <small>12-Dekabr, 2020-yil</small>
+		</li>
+	  </ul>
+	</div>
+	<div class="product__row">
+	  <div class="product__overview h4" data-aos="animation-scale-y">Challenge</div>
+	  <div class="product__content content" data-aos="animation-scale-y" data-aos-delay="200">
+		{{ web.web_description }}
+	  </div>
+	</div>
+  </div>
+</div>
+
+<div class="product-bg-wr">
+  <div class="parallax-window product__bg" data-speed="1.8" data-z-index="1" data-parallax="scroll" data-image-src="{{web.web_image_full.url}}"></div>
+</div>
+
+<div class="product__body">
+	<div class="product__center center">
+		<div class="product__row project-info-col-typ">
+			<div class="product__overview h6" data-aos="animation-scale-y" data-aos-delay="">
+				<div class="project-info-title">COLOR PALLETE</div>
+					<div class="pallete-list">
+
+                        {% for item in web.colors_pattern.all %}
+                            <div class="pallete-item">
+                              <div class="color" style="background:{{ item.hash }}"></div>
+                              <div class="color-title">{{ item.hash }}</div>
+                            </div>
+                        {% endfor %}
+
+					</div>
+			</div>
+			  <div class="product__overview h6" data-aos="animation-scale-y" data-aos-delay="200">
+				<div class="project-info-title">TYPOGRAPHY</div>
+					<div class="h2">Ubuntu</div>
+					<div class="h4">open sans</div>
+			  </div>
+		</div>
+	</div>
+</div>
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="{% static 'js/parallax.js' %}"></script>
+<!-- <script>
+  $(document).ready(function() {
+    // init controller
+    var controller = new ScrollMagic.Controller();
+
+    // build scenes
+    new ScrollMagic.Scene({triggerElement: '.photo-item-1', triggerHook: 1, duration: '200%'})
+          .setTween('.inside-left', {top: '-100%', ease: Linear.easeNone})
+          .addTo(controller);
+
+    new ScrollMagic.Scene({triggerElement: '.photo-item-1', triggerHook: 1, duration: '200%'})
+          .setTween('.inside-right', {top: 'auto', bottom: '20%', ease: Linear.easeNone})
+          .addTo(controller);
+
+    new ScrollMagic.Scene({triggerElement: '.photo-item-2', triggerHook: 1, duration: '200%'})
+          .setTween('.inside-center', {top: 'auto', bottom: '20%', ease: Linear.easeNone})
+          .addTo(controller);
+
+
+  });
+</script> -->
+
+{% endblock content %}

@@ -1,0 +1,83 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<!-- Bootstrap Grid (ONLY GRID NOT FULL) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap-grid.min.css">
+<div class="product web-single-title-wr about-us-page pt-100">
+        <div class="product__head bg-white">
+
+
+          <div class="center">
+            <div class="product__wrap">
+              <div class="product__stage stage" data-aos="animation-scale-y">Xizmatlar - Design</div>
+              <h1 class="product__title title h1" data-aos="animation-scale-y" data-aos-delay="150">WE CREATE PROGRESS BY DESIGN AND DEVELOPE CRAFTING DIGITAL EXPERIENCES.</h1>
+
+              <p  data-aos="animation-scale-y" data-aos-delay="150">Our team is proficient in an array of services that can help elevate and empower your company or organization. We work with you to build comprehensive, thoughtful, and purpose-driven identities and experiences. Let’s talk about how our services can add value to your company.</p>
+            </div>
+          </div>
+
+
+          <div class="center pt-128">
+             {% for item in service.services.all %}
+            <div class="service-promo-item row wow fadeInLeft mb-30" data-wow-delay=".2s" data-wow-offset="150" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+              <div class="col-sm-4 service-promo-item-photo" style="background-image: url({{item.image.url}});background-repeat: no-repeat;background-color: #f0f1f3;">
+                <img src="{{item.image.url}}" alt="" class="img-fluid d-sm-none">
+              </div>
+              <div class="col-sm-8 service-promo-item-detail">
+                <div class="service-promo-item-title">{{item.title}}</div>
+                <div class="fs18 text-grey">{{item.description}}</div>
+                <div class="row fs20">
+
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+
+
+
+          <div class="center pt-128">
+            <div class="progress-item-head">
+              <div class="product__overview h4" data-aos="animation-scale-y">Our Approach</div>
+              <div class="product__content content" data-aos="animation-scale-y" data-aos-delay="200">
+                <p>We love to work side by side with ambitious perfectionist and challenge-loving clients</p>
+              </div>
+            </div>
+            <div class="product__row progress-item">
+              <div class="product__overview content h4 progress-item-num" data-aos="animation-scale-y">1.</div>
+              <div class="product__content" data-aos="animation-scale-y" data-aos-delay="200">
+                <div class="product__overview h4 progress-item-title" data-aos="animation-scale-y">Partnership</div>
+                <p class="content">We believe in design partnership and co-creation. We like to discuss, plan and be a part of your team. Only sharing same vision can achieve great results.</p>
+              </div>
+            </div>
+            <div class="product__row progress-item">
+              <div class="product__overview content h4 progress-item-num" data-aos="animation-scale-y">2.</div>
+              <div class="product__content" data-aos="animation-scale-y" data-aos-delay="200">
+                <div class="product__overview h4 progress-item-title" data-aos="animation-scale-y">Closeness</div>
+                <p class="content">We believe in design partnership and co-creation. We like to discuss, plan and be a part of your team. Only sharing same vision can achieve great results.</p>
+              </div>
+            </div>
+            <div class="product__row progress-item">
+              <div class="product__overview content h4 progress-item-num" data-aos="animation-scale-y">3.</div>
+              <div class="product__content" data-aos="animation-scale-y" data-aos-delay="200">
+                <div class="product__overview h4 progress-item-title" data-aos="animation-scale-y">Future</div>
+                <p class="content">We believe in design partnership and co-creation. We like to discuss, plan and be a part of your team. Only sharing same vision can achieve great results.</p>
+              </div>
+            </div>
+            <div class="product__row progress-item">
+              <div class="product__overview content h4 progress-item-num" data-aos="animation-scale-y">4.</div>
+              <div class="product__content" data-aos="animation-scale-y" data-aos-delay="200">
+                <div class="product__overview h4 progress-item-title" data-aos="animation-scale-y">Commitment</div>
+                <p class="content">We believe in design partnership and co-creation. We like to discuss, plan and be a part of your team. Only sharing same vision can achieve great results.</p>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+{% endblock content %}

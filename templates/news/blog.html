@@ -1,0 +1,35 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    <div class="section section-content">
+          <div class="container">
+            <div class="row justify-content-md-center text-center">
+              <div class="col-lg-9">
+                <h3 class="section-item-title section-item-title-md text-grey-light">editorials</h3>
+                <h1 class="h2-flash font-libre"><strong>Writing is a socially acceptable form of schizophrenia</strong></h1>
+              </div>
+            </div>
+
+            <div class="article-list-grid row a-grid-line">
+              {% for i in news %}
+              <div class="col-md-4 grid-item category-inspiration">
+                <div class="article-item mb70">
+                  <div class="article-item-photo zooming wow fadeInDown" data-wow-delay=".2s" data-wow-offset="150"><a href="{{i.get_absolute_url}}"><img src="{{i.news_post_image.url}}" alt="" class="img-fluid" /></a></div>
+                  <div class="article-item-title"><a href="{{i.get_absolute_url}}">{{i.news_post_title}}</a></div>
+                  <div class="article-item-date  text-grey">{{ i.news_post_date }}</div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+
+            <div class="pager row mt50 text-uppercase">
+              <div class="col-6"><a href="#"><i class="icon ion-ios-arrow-left"></i> older posts</a></div>
+              <div class="col-6 text-right"><a href="#">newer posts <i class="icon ion-ios-arrow-right"></i></a></div>
+            </div>
+          </div>
+        </div>
+
+{% endblock content %}

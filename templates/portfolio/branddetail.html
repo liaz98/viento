@@ -1,0 +1,112 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="product product-brand-single pt-128">
+<div class="product__head">
+<div class="product__center center">
+  <div class="product__wrap">
+    <div class="product__stage stage" data-aos="animation-scale-y">Design xizmati</div>
+    <h1 class="product__title title h1" data-aos="animation-scale-y" data-aos-delay="150">{{brand.brand_title}}</h1>
+  </div>
+  <div class="product__box product__box_show project-info" data-aos="animation-translate-y">
+    <!-- <div class="product__category">Services Provided</div> -->
+    <ul class="product__list">
+      <li>MIJOZ<br>
+        <small>{{brand.client}}</small>
+      </li>
+      <li>XIZMAT TURI<br>
+        <small>{{brand.service}}</small>
+      </li>
+      <li>VAQT<br>
+        <small>{{brand.year|date:'Y'}}</small>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
+
+<div class="product-bg-wr">
+<div class="parallax-window product__bg" data-z-index="1" data-parallax="scroll" data-image-src="{{brand.brand_image_cover.url}}"></div>
+
+<!-- <div class="product__bg" style="background-image: url('img/portfolio/brand/panda2-min.jpg')"></div> -->
+</div>
+
+
+</div>
+
+<div class="desc">
+<div class="desc__center center">
+<div class="desc__head">
+  <div class="desc__title h4" data-aos="animation-scale-y">Panda description</div>
+  <div class="desc__content content" data-aos="animation-scale-y" data-aos-delay="200">
+    {{brand.brand_description}}
+  </div>
+</div>
+<div class="desc__list">
+  {% for item in brand.image_col.all %}
+  <a class="desc__preview" href="{{item.image.url}}" data-lightbox="image-1"  data-toggle="lightbox" data-aos="animation-translate-y" data-aos-delay="">
+    <img class="desc__pic" src="{{item.image.url}}" alt="">
+    <div class="desc__zoom">
+      <img class="desc__pic" src="{% static 'img/arrow-up-right.svg' %}" alt="">
+    </div>
+  </a>
+  {% endfor %}
+
+</div>
+</div>
+<div class="wrapper wrapper_gradient">
+ <div class="details portfolio-single-slider mb-130" id="details">
+  <div class="details__center center">
+    <div class="details__container">
+
+
+      <div class="details__slider owl-carousel js-slider-details">
+        {% for item in brand.gallery.all %}
+        <div class="details__item">
+            <div class="details__text" data-aos="animation-scale-y">
+              <a href="{{item.gallery.url}}" data-lightbox="roadtrip">
+                <img src="{{item.gallery.url}}" alt="">
+              </a>
+            </div>
+        </div>
+        {% endfor %}
+      </div>
+
+
+    </div>
+  </div>
+  <div class="details__figures">
+    <div class="details__figure"><img class="details__pic js-parallax" data-scale="2" data-orientation="down" src="{% static 'img/figure-1.png' %}" alt=""></div>
+    <div class="details__figure"><img class="details__pic js-parallax" data-scale="2" data-orientation="up" src="{% static 'img/figure-2.png' %}" alt=""></div>
+    <div class="details__figure"><img class="details__pic js-parallax" data-scale="1.2" data-orientation="up" src="{% static 'img/figure-3.png' %}" alt=""></div>
+  </div>
+</div>
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+
+<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+    <script>
+      $(document).ready(function() {
+        // init controller
+        var controller = new ScrollMagic.Controller();
+
+        // build scenes
+        new ScrollMagic.Scene({triggerElement: '.project-card-branding', triggerHook: 0, duration: $('.project-card-promo').outerHeight() + $('.project-card-promo').offset().top})
+              .setTween('.project-card-promo', {backgroundPosition: '50% 80%', ease: Linear.easeNone})
+              .addTo(controller);
+
+        new ScrollMagic.Scene({triggerElement: '.next-project-promo', triggerHook: 1, duration: '100%'})
+              .setTween('.next-project-promo', {backgroundPosition: '50% 100%', ease: Linear.easeNone})
+              .addTo(controller);
+
+      });
+    </script> -->
+
+{% endblock content %}

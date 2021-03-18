@@ -1,0 +1,196 @@
+{% load static %}
+<div class="wrapper wrapper_gradient pt-40">
+  <div class="wrapper wrapper_dark">
+            <div class="contacts">
+              <div class="contacts__center center">
+                <div class="contacts__container">
+                  <div class="contacts__wrap">
+                    <div class="contacts__stage stage" data-aos="animation-scale-y">Say hello 👋</div>
+                    <h2 class="contacts__title h1" data-aos="animation-scale-y" data-aos-delay="200">Let’s Work <br>Together.</h2>
+                    <div class="contacts__info" data-aos="animation-scale-y" data-aos-delay="400">I’d love to meet up with you to discuss your venture, and potential collaborations.</div>
+                  </div>
+                  <div class="contacts__row">
+                    <div class="contacts__details" data-aos="animation-translate-y"><a class="contacts__line" href="mailto:salom@viento.uz">
+                        <div class="contacts__icon"><svg class="icon icon-email">
+                            <use xlink:href="{% static 'img/sprite.svg' %}#icon-email"></use>
+                          </svg></div>
+                        <div class="contacts__text">salom@viento.uz</div>
+                      </a>
+                      <div class="contacts__line">
+                        <div class="contacts__icon"><svg class="icon icon-place">
+                            <use xlink:href="{% static 'img/sprite.svg' %}#icon-place"></use>
+                          </svg></div>
+                        <div class="contacts__text">
+                          <p>Mustaqillik ko'chasi 88</p>
+                        </div>
+                      </div><a class="contacts__line" href="tel:+998901313150">
+                        <div class="contacts__icon"><svg class="icon icon-phone">
+                            <use xlink:href="{% static 'img/sprite.svg' %}#icon-phone"></use>
+                          </svg></div>
+                        <div class="contacts__text">+998 90 1313150</div>
+                      </a>
+                    </div>
+
+                    <form class=" " action="/" method="post" data-aos="animation-translate-y" data-aos-delay="200">
+                        {% csrf_token %}
+                      <div class="contacts__field field">
+                        <div class="field__wrap">{{form.name}}
+<!--                            <input class="field__input" type="text" name="name" placeholder="Name" />-->
+                          <div class="field__icon"><svg class="icon icon-profile">
+                              <use xlink:href="{% static 'img/sprite.svg' %}#icon-profile"></use>
+                            </svg></div>
+                        </div>
+                      </div>
+                      <div class="contacts__field field">
+                        <div class="field__wrap">{{form.phone}}
+<!--                            <input class="field__input" type="phone" name="phone" placeholder="Phone" />-->
+                          <div class="field__icon"><svg class="icon icon-send">
+                              <use xlink:href="{% static 'img/sprite.svg' %}#icon-send"></use>
+                            </svg></div>
+                        </div>
+                      </div>
+                       <div class="contacts__field field">
+                        <div class="field__wrap">{{form.subject}}
+<!--                            <input class="field__input" type="text" name="subject" placeholder="Subject" />-->
+                          <div class="field__icon"><svg class="icon icon-profile">
+                              <use xlink:href="{% static 'img/sprite.svg' %}#icon-profile"></use>
+                            </svg></div>
+                        </div>
+                      </div>
+                      <div class="contacts__field field field_textarea">
+                        <div class="field__wrap">
+                            {{form.message}}
+<!--                            <textarea class="field__textarea" name="message" placeholder="Message"></textarea>-->
+                          <div class="field__icon"><svg class="icon icon-message">
+                              <use xlink:href="{% static 'img/sprite.svg' %}#icon-message"></use>
+                            </svg></div>
+                        </div>
+                      </div>
+                      <div class="contacts__btn"><button class="btn btn_purple" type="submit"><span class="btn__text">Let’s Talk</span><svg class="icon icon-arrow-right">
+                            <use xlink:href="{% static 'img/sprite.svg' %}#icon-arrow-right"></use>
+                          </svg></button></div>
+                    </form>
+                  </div>
+                  <div class="contacts__category h5">Let’s connect</div>
+                  <div class="contacts__social">
+                    <div class="contacts__box" data-aos="animation-translate-y"><a class="contacts__link" href="https://www.facebook.com/viento.marketing"><!-- <svg class="icon icon-instagram">
+                          <use xlink:href="{% static 'img/sprite.svg' %}#icon-instagram"></use>
+                        </svg> -->
+                        <ion-icon name="logo-facebook" class="facebook"></ion-icon>
+                        <div class="contacts__text">Facebook</div>
+                      </a></div>
+                    <div class="contacts__box" data-aos="animation-translate-y" data-aos-delay="150"><a class="contacts__link" href="https://www.instagram.com/vientouz/"><svg class="icon icon-instagram">
+                          <use xlink:href="{% static 'img/sprite.svg' %}#icon-instagram"></use>
+                        </svg>
+                        <div class="contacts__text">Instagram</div>
+                      </a></div>
+                    <div class="contacts__box" data-aos="animation-translate-y" data-aos-delay="300"><a class="contacts__link" href="#"><svg class="icon icon-instagram">
+                          <use xlink:href="{% static 'img/sprite.svg' %}#icon-send"></use>
+                        </svg>
+                        <div class="contacts__text">Telegram</div>
+                      </a></div>
+                    <div class="contacts__box" data-aos="animation-translate-y" data-aos-delay="450"><a class="contacts__link" href="#"><svg class="icon icon-instagram">
+                          <use xlink:href="{% static 'img/sprite.svg' %}#icon-instagram"></use>
+                        </svg>
+                        <div class="contacts__text">Instagram</div>
+                      </a></div>
+                  </div>
+                  <div class="figures">
+                    <div class="figures__preview"><img class="figures__pic" src="{% static 'img/figures-1.png' %}" alt="" /></div>
+                    <div class="figures__preview"><img class="figures__pic js-parallax" data-scale="1.6" data-orientation="up" src="{% static 'img/figures-2.png' %}" alt="" /></div>
+                    <div class="figures__preview"><img class="figures__pic js-parallax" data-scale="1.3" data-orientation="up" src="{% static 'img/figures-3.png' %}" alt="" /></div>
+                    <div class="figures__preview"><img class="figures__pic" src="{% static 'img/figures-4.png' %}" alt="" /></div>
+                    <div class="figures__preview"><img class="figures__pic js-parallax" data-scale="2.3" data-orientation="down" src="{% static 'img/figures-5.png' %}" alt="" /></div>
+                    <div class="figures__preview"><img class="figures__pic js-parallax" data-scale="2" data-orientation="up" src="{% static 'img/figures-6.png' %}" alt="" /></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer">
+              <div class="footer__center center">
+                <div class="footer__body"><a class="footer__logo" href="index.html"><img class="footer__pic" src="{% static 'img/logo-empty.svg' %}" alt="" /></a>
+                  <div class="footer__wrap">
+                    <div class="footer__title h1">You only have one chance to make a first impression.</div>
+                    <div class="footer__info h4">Let’s make it an amazing one.</div>
+                  </div>
+                  <div class="footer__menu"><a class="footer__link" href="#">About Me</a><a class="footer__link" href="#">Projects</a><a class="footer__link" href="#">Contact</a><a class="footer__link" href="#">Dribbble</a><a class="footer__link" href="#">Instagram</a></div>
+                </div>
+                <div class="footer__bottom">
+                  <div class="footer__copyright">© 2020, UI8 LLC.</div><a class="footer__scroll js-scroll" href="#header">Back to top</a>
+                </div>
+              </div>
+              <div class="footer__bg">
+                <div class="footer__preview"><img class="footer__pic js-parallax" data-scale="1.5" data-orientation="down" src="{% static 'img/footer-cube-1.png' %}" alt="" /></div>
+                <div class="footer__preview"><img class="footer__pic js-parallax" data-scale="1.8" data-orientation="up" src="{% static 'img/footer-cube-1.png' %}" alt="" /></div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="cursor"></div>
+    </div>
+    <script src="{% static 'js/app.js' %}"></script>
+    <script src="{% static 'js/common.js' %}"></script>
+    <!-- Add Class to #main -->
+    <script>
+      if(window.location.pathname=='/'){
+         var element = document.getElementById("main");
+         element.classList.add("no-padding");
+        }else{
+          var element = document.getElementById("main");
+         element.classList.remove("main");
+        }
+      
+         
+      
+    </script>
+    <!-- Smooth Scroll JS -->
+    <script src="{% static 'js/smoothscroll.js' %}"></script>
+    <script>
+      $(document).ready(function() {
+        // init controller
+        var controller = new ScrollMagic.Controller();
+
+        // build scenes
+        new ScrollMagic.Scene({triggerElement: '.main', triggerHook: 0, duration: '100%'})
+              .setTween('.full-image-dark', {backgroundPosition: '50% 100%', ease: Linear.easeNone})
+              .addTo(controller);
+
+
+      });
+    </script>
+    <!-- Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Lightbox JS -->
+    <script src="{% static 'lightbox/js/lightbox.js' %}"></script>
+    <script>
+        lightbox.option({
+          'disableScrolling': true,
+          'wrapAround': true,
+          'alwaysShowNavOnTouchDevices': true,
+          'showImageNumberLabel': false
+        })
+    </script>
+    <!-- WOW JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script>
+      new WOW().init();
+    </script>
+    <!-- Accordion for top right menu (Qilingan ishlar) -->
+    <script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+  </body>
+</html>

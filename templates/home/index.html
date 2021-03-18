@@ -1,0 +1,283 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="main__bg"><img class="main__pic" src="{% static 'img/bg-main.jpg' %}" alt=""></div>
+<div class="main__center center">
+  <div class="main__wrap">
+    <div class="main__stage stage" data-aos="transform">Viento - Marketing Xizmatlari</div>
+    <h1 class="main__title title h1"><span data-aos="transform" data-aos-delay="150">Hush kelibsiz</span><span data-aos="transform" data-aos-delay="300">name's Jack.</span><span data-aos="transform" data-aos-delay="450">I'm a Visual</span><span data-aos="transform" data-aos-delay="600">Designer.</span></h1><a class="scroll js-scroll" href="#details" data-aos="transform">
+      <div class="scroll__icon"><img class="scroll__pic" src="{% static 'img/scroll.svg' %}" alt=""></div>
+      <div class="scroll__text">Scroll down</div>
+    </a>
+  </div>
+</div>
+<div class="main__view" data-aos>
+  <div class="main__preview"><img class="main__pic" src="{% static 'img/main-pic-6.png' %}" alt=""></div>
+  <div class="main__preview"><img class="main__pic js-parallax" data-scale="2.5" data-orientation="up" src="{% static 'img/main-pic-1.png' %}" alt=""></div>
+  <div class="main__preview"><img class="main__pic js-parallax" data-scale="1.5" data-orientation="up" src="{% static 'img/main-pic-2.png' %}" alt=""></div>
+  <div class="main__preview"><img class="main__pic" src="{% static 'img/main-pic-3.png' %}" alt=""></div>
+  <div class="main__preview"><img class="main__pic" src="{% static 'img/main-pic-4.png' %}" alt=""></div>
+  <div class="main__preview"><img class="main__pic js-parallax" data-scale="4.5" data-orientation="up" src="{% static 'img/main-pic-5.png' %}" alt=""></div>
+  <div class="main__preview"><img class="main__pic js-parallax" data-scale="1.5" data-orientation="down" src="{% static 'img/main-pic-7.png' %}" alt=""></div>
+</div>
+<div class="main__figures">
+  <div class="main__figure" data-aos="animation-translate-y"><img class="main__pic js-parallax" data-scale="2.2" data-orientation="down" src="{% static 'img/figure-1.png' %}" alt=""></div>
+  <div class="main__figure" data-aos="animation-translate-y" data-aos-delay="200"><img class="main__pic js-parallax" data-scale="2.2" data-orientation="up" src="{% static 'img/figure-2.png' %}" alt=""></div>
+  <div class="main__figure" data-aos="animation-translate-y" data-aos-delay="400"><img class="main__pic" src="{% static 'img/figure-3.png' %}" alt=""></div>
+</div>
+</div>
+<div class="details" id="details">
+<div class="details__center center">
+  <div class="details__head" data-aos="animation-scale-y">
+    <div class="details__stage stage">What I Do</div>
+    <h3 class="details__info h3">I enjoy creating delightful,  <br>human-centered digital experiences.</h3>
+  </div>
+  <h2 class="details__title" data-aos="animation-scale-y">Think. Make. <br>Solve. </h2>
+  <div class="details__btn" data-aos="animation-translate-y"><button class="btn btn_purple"><span class="btn__text">Contact Me</span><svg class="icon icon-arrow-right">
+        <use xlink:href="{% static 'img/sprite.svg' %}#icon-arrow-right"></use>
+      </svg></button></div>
+  <div class="details__container">
+    <div class="details__slider owl-carousel js-slider-details">
+
+
+
+      {% for item in service %}
+      <div class="details__item">
+        <div class="details__preview details__preview_color">
+          <div class="details__img"><img class="details__pic" src="{{item.service_image.url}}" alt=""></div>
+        </div>
+        <h5 class="details__category h5">{{ item.name|safe }}</h5>
+        <div class="details__text">{{item.service_description|safe|truncatechars:150}}</div><button class="details__btn btn btn_dark">Ko'proq ma'lumot </button>
+      </div>
+      {% endfor %}
+<!--      <div class="details__item">-->
+<!--        <div class="details__preview details__preview_hand">-->
+<!--          <div class="details__img"><img class="details__pic" src="{% static 'img/hand.png' %}" alt=""></div>-->
+<!--        </div>-->
+<!--        <h5 class="details__category h5">User Experience</h5>-->
+<!--        <div class="details__text">We have got quite a few already made templates for better project management that you can use now.</div><button class="details__btn btn btn_dark">Find out more</button>-->
+<!--      </div>-->
+
+    </div>
+  </div>
+</div>
+<div class="details__figures">
+  <div class="details__figure"><img class="details__pic js-parallax" data-scale="2" data-orientation="down" src="{% static 'img/figure-1.png' %}" alt=""></div>
+  <div class="details__figure"><img class="details__pic js-parallax" data-scale="2" data-orientation="up" src="{% static 'img/figure-2.png' %}" alt=""></div>
+  <div class="details__figure"><img class="details__pic js-parallax" data-scale="1.2" data-orientation="up" src="{% static 'img/figure-3.png' %}" alt=""></div>
+</div><a class="details__contact services-all" href="#">Barcha xizmatlar</a>
+</div>
+<div class="work">
+<div class="work__circles"></div>
+<div class="work__center center">
+  <div class="work__wrap">
+    <div class="work__stage stage stage_pink" data-aos="animation-scale-y">Who I Work With</div>
+    <h2 class="work__title title h1" data-aos="animation-scale-y" data-aos-delay="150">Art Direction for Global Leading Brands.</h2>
+    <div class="work__text" data-aos="animation-scale-y" data-aos-delay="300">I research and create breakthrough - delightful ideas, leading visual designers.</div><a class="scroll js-scroll" data-aos="animation-scale-y" href="#cases">
+      <div class="scroll__icon"><img class="scroll__pic" src="{% static 'img/scroll.svg' %}" alt=""></div>
+      <div class="scroll__text">Scroll down</div>
+    </a>
+  </div>
+</div>
+<div class="work__preview"><img class="work__pic js-parallax" data-scale="2" data-orientation="down" src="{% static 'img/work-cube.png' %}" alt=""></div>
+<div class="work__figures" data-aos>
+  <div class="work__figure"><img class="work__pic js-parallax" data-scale="1.3" data-orientation="up" src="{% static 'img/work-cube-1.png' %}" alt=""></div>
+  <div class="work__figure"><img class="work__pic js-parallax" data-scale="1.5" data-orientation="up left" src="{% static 'img/work-cube-2.png' %}" alt=""></div>
+  <div class="work__figure"><img class="work__pic js-parallax" data-scale="1.3" data-orientation="up right" src="{% static 'img/work-cube-3.png' %}" alt=""></div>
+  <div class="work__figure"><img class="work__pic" src="{% static 'img/work-cube-4.png' %}" alt=""></div>
+  <div class="work__figure"><img class="work__pic js-parallax" data-scale="1.1" data-orientation="left" src="{% static 'img/work-cube-5.png' %}" alt=""></div>
+  <div class="work__figure"><img class="work__pic js-parallax" data-scale="1.2" data-orientation="right" src="{% static 'img/work-cube-6.png' %}" alt=""></div>
+  <div class="work__figure"><img class="work__pic js-parallax" data-scale="1.2" data-orientation="down" src="{% static 'img/work-cube-7.png' %}" alt=""></div>
+</div>
+</div>
+<!-- <div class="wrapper wrapper_gradient"> -->
+
+<div class="cases cases_main" id="cases">
+  <div class="cases__center center">
+    <div class="cases__stage stage" data-aos="animation-scale-y">Portfolio</div>
+    <h2 class="cases__title h1" data-aos="animation-scale-y" data-aos-delay="150">Look at My <br>Products.</h2>
+
+
+    <div class="cases__nav" data-aos="animation-scale-y" data-aos-delay="300">
+      <button class="cases__link active"  data-filter="all">All</button>
+      <button class="cases__link"  data-filter="web">Web Design</button>
+      <button class="cases__link"  data-filter="brand">Brand</button>
+    </div>
+
+
+    <div class="cases__list js-owl" data-items-mobile-portrait="1" data-items-mobile-album="1" data-autoheight>
+
+      {% for item in web %}
+      <a class="cases__item all web" data-aos-once="true" data-aos="animation-translate-y" data-aos-delay="" href="{{item.get_absolute_url}}">
+        <div class="cases__preview">
+          <img class="cases__pic" src="{{item.web_image.url}}" alt="">
+          <div class="cases__box">Case <br>Study</div>
+        </div>
+        <div class="cases__body">
+          <h4 class="cases__info h4">{{item.name}}</h4>
+          <div class="cases__text">{{item.web_title}}</div>
+        </div>
+      </a>
+      {% endfor %}
+      {% for item in brand %}
+      <a class="cases__item all brand" data-aos-once="true" data-aos="animation-translate-y" data-aos-delay="" href="{{item.get_absolute_url}}">
+        <div class="cases__preview">
+          <img class="cases__pic" src="{{item.brand_image.url}}" alt="">
+          <div class="cases__box">Case <br>Study</div>
+        </div>
+        <div class="cases__body">
+          <h4 class="cases__info h4">{{item.name}}</h4>
+          <div class="cases__text">{{item.brand_title}}</div>
+        </div>
+      </a>
+      {% endfor %}
+      {% for item in photo %}
+      <a class="cases__item all brand" data-aos-once="true" data-aos="animation-translate-y" data-aos-delay="" href="{{item.get_absolute_url}}">
+        <div class="cases__preview">
+          <img class="cases__pic" src="{{item.photo_image.url}}" alt="">
+          <div class="cases__box">Case <br>Study</div>
+        </div>
+        <div class="cases__body">
+          <h4 class="cases__info h4">{{item.name}}</h4>
+          <div class="cases__text">{{item.photo_title}}</div>
+        </div>
+      </a>
+      {% endfor %}
+
+
+<!--      <a class="cases__item all web" data-aos-once="true" data-aos="animation-translate-y" data-aos-delay="" href="case.html">-->
+<!--        <div class="cases__preview">-->
+<!--          <img class="cases__pic" src="{% static 'img/cases-pic-4.jpg' %}" alt="">-->
+<!--          <div class="cases__box">Case <br>Study</div>-->
+<!--        </div>-->
+<!--        <div class="cases__body">-->
+<!--          <h4 class="cases__info h4">Web Landing Page</h4>-->
+<!--          <div class="cases__text">UI Kit, Coded Template</div>-->
+<!--        </div>-->
+<!--      </a>-->
+
+
+<!--      <a class="cases__item all web" data-aos-once="true" data-aos="animation-translate-y" data-aos-delay="" href="case.html">-->
+<!--        <div class="cases__preview"><img class="cases__pic" src="{% static 'img/cases-pic-5.jpg' %}" alt="">-->
+<!--          <div class="cases__box">Case <br>Study</div>-->
+<!--        </div>-->
+<!--        <div class="cases__body">-->
+<!--          <h4 class="cases__info h4">Web Landing Page</h4>-->
+<!--          <div class="cases__text">UI Kit, Coded Template</div>-->
+<!--        </div>-->
+<!--      </a>-->
+
+
+<!--      <a class="cases__item all brand" data-aos-once="true" data-aos="animation-translate-y" data-aos-delay="" href="case.html">-->
+<!--        <div class="cases__preview"><img class="cases__pic" src="{% static 'img/cases-pic-6.jpg' %}" alt="">-->
+<!--          <div class="cases__box">Case <br>Study</div>-->
+<!--        </div>-->
+<!--        <div class="cases__body">-->
+<!--          <h4 class="cases__info h4">Brand Landing Page</h4>-->
+<!--          <div class="cases__text">UI Kit, Coded Template</div>-->
+<!--        </div>-->
+<!--      </a>-->
+
+
+
+    </div>
+  </div>
+
+
+<script>
+function myapp() {
+  const buttons = document.querySelectorAll(".cases__link");
+  const cards = document.querySelectorAll(".cases__item");
+  function filter(category, items) {
+    items.forEach((item) => {
+      const isItemFiltered = !item.classList.contains(category);
+      const isShowAll = category.toLowerCase() === "all";
+      if (isItemFiltered && !isShowAll) {
+        item.classList.add("hide");
+      } else {
+        item.classList.remove("hide");
+      }
+    });
+  }
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const currentCategory = button.dataset.filter;
+      console.log(currentCategory);
+      filter(currentCategory, cards);
+    });
+  });
+
+
+}
+myapp();
+</script>
+
+
+
+  <div class="cases__figures">
+    <div class="cases__figure">
+      <img class="cases__pic js-parallax" data-scale="2" data-orientation="down" src="{% static 'img/figure-2.png' %}" alt="">
+    </div>
+    <div class="cases__figure">
+      <img class="cases__pic js-parallax" data-scale="1.8" data-orientation="down" src="{% static 'img/figure-3.png' %}" alt="">
+    </div>
+  </div>
+</div>
+<div class="review"></div>
+<!--  <div class="review__center center">-->
+<!--    <div class="review__stage stage" data-aos="animation-scale-y">What People Say</div>-->
+<!--    <h2 class="review__title title h1" data-aos="animation-scale-y" data-aos-delay="200">Trusted by <br>Clients.</h2>-->
+<!--    <div class="review__container" data-aos="animation-translate-y" data-aos-delay="400">-->
+<!--      <div class="review__slider owl-carousel js-slider-review">-->
+<!--        <div class="review__item">-->
+<!--          <div class="review__text">“ Folio Designer is a clean and creative landing page that matches with any freelancer or designer, you can easily to build the page in Sketch or Figma.”</div>-->
+<!--          <div class="review__author">-->
+<!--            <div class="review__ava"><img class="review__pic" src="{% static 'img/ava-1.jpg' %}" alt=""></div>-->
+<!--            <div class="review__details">-->
+<!--              <div class="review__man h5">Dash</div>-->
+<!--              <div class="review__company">UI8</div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="review__item">-->
+<!--          <div class="review__text">“ Folio Designer is a clean and creative landing page that matches with any freelancer or designer, you can easily to build the page in Sketch or Figma.”</div>-->
+<!--          <div class="review__author">-->
+<!--            <div class="review__ava"><img class="review__pic" src="{% static 'img/ava-1.jpg' %}" alt=""></div>-->
+<!--            <div class="review__details">-->
+<!--              <div class="review__man h5">Dash</div>-->
+<!--              <div class="review__company">UI8</div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="review__item">-->
+<!--          <div class="review__text">“ Folio Designer is a clean and creative landing page that matches with any freelancer or designer, you can easily to build the page in Sketch or Figma.”</div>-->
+<!--          <div class="review__author">-->
+<!--            <div class="review__ava"><img class="review__pic" src="{% static 'img/ava-1.jpg' %}" alt=""></div>-->
+<!--            <div class="review__details">-->
+<!--              <div class="review__man h5">Dash</div>-->
+<!--              <div class="review__company">UI8</div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="review__item">-->
+<!--          <div class="review__text">“ Folio Designer is a clean and creative landing page that matches with any freelancer or designer, you can easily to build the page in Sketch or Figma.”</div>-->
+<!--          <div class="review__author">-->
+<!--            <div class="review__ava"><img class="review__pic" src="{% static 'img/ava-1.jpg' %}" alt=""></div>-->
+<!--            <div class="review__details">-->
+<!--              <div class="review__man h5">Dash</div>-->
+<!--              <div class="review__company">UI8</div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="review__bg">-->
+<!--    <div class="review__preview"><img class="review__pic js-parallax" data-scale="1.5" data-orientation="down" src="{% static 'img/review-cube.png' %}" alt=""></div>-->
+<!--    <div class="review__preview"><img class="review__pic" src="{% static 'img/review-cube.png' %}" alt=""></div>-->
+<!--  </div>-->
+{% endblock content %}
+
+
+

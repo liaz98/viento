@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    <div class="section section-content">
+          <div class="container">
+            <div class="row justify-content-md-center">
+              <div class="col-lg-10">
+                <h3 class="section-item-title-xs">featured works</h3>
+                <h1 class="h2-flash font-abril">Bigger, Bolder &amp; Better</h1>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid">
+            <div class="project-list-flash row no-gutters a-grid">
+              {% for item in photo %}
+              <div class="col-lg-4 col-sm-6 grid-item wow fadeInUp category-photography" data-wow-delay=".6s">
+                <a href="{{item.get_absolute_url}}" class="project-item">
+                  <div class="project-carousel-photo" style="background-image:url({{item.photo_image.url}})"></div>
+                  <div class="project-carousel-date">{{item.year}}</div>
+                  <div class="project-carousel-detail">
+                    <h2 class="project-carousel-title">{{item.photo_title}}</h2>
+                    <div class="project-carousel-go"><i class="icon ion-ios-arrow-right"></i></div>
+                    <div class="project-carousel-category">{{item.name}}</div>
+                  </div>
+                </a>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="container">
+            <div class="more more-lg more-total-lg text-center"><a href="#" class="underline">More project</a></div>
+          </div>
+        </div>
+
+{% endblock content %}

@@ -1,0 +1,25 @@
+<div class="menu-main" id="accordion">
+  <ul>
+    <li class="active"><a data-text="Bosh sahifa"  href="{% url 'index' %}" role="button" aria-expanded="true" aria-controls="menuHome">Bosh sahifa</a>
+    </li>
+    <li><a data-text="Portfolio" data-toggle="collapse" href="#menuWorks" role="button" aria-expanded="false" aria-controls="menuWorks">Portfolio</a>
+      <div class="collapse" id="menuWorks" data-parent="#accordion">
+        <ul>
+          <li><a href="{% url 'port_all' %}" class="animsition-link" data-animsition-out-class="fade-out" data-text="Hamma qilingan ishlar">Hamma qilingan ishlar</a></li>
+          <li><a href="{% url 'web' %}" class="animsition-link" data-animsition-out-class="fade-out" data-text="Web saytlar">Web saytlar</a></li>
+          <li><a href="{% url 'brand' %}" class="animsition-link" data-animsition-out-class="fade-out" data-text="Dizaynlar">Dizaynlar</a></li>
+          <li><a href="{% url 'photo' %}" class="animsition-link" data-animsition-out-class="fade-out" data-text="Fotolar">Fotolar</a></li>
+        </ul>
+      </div>
+    </li>
+    <li><a data-text="Xizmatlar" href="{% url 'service' %}">Xizmatlar</a>
+    <li><a data-text="Yangiliklar" href="{% url 'news' %}" role="button" aria-expanded="false" aria-controls="menuNews">Yangiliklar</a>
+    </li>
+    <li><a data-text="Biz haqimizda" href="{% url 'about' %}">Biz haqimizda</a>
+    </li>
+    <li><a href="{% url 'contacts' %}" class="animsition-link" data-animsition-out-class="fade-out" data-text="Kontakt">Kontakt</a></li>
+  </ul>
+</div>
+
+
+
